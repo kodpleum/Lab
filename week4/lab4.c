@@ -16,7 +16,7 @@ int main()
         int x = str[i];
         if (x <= '9' && x >= '0')
         {
-            num = num * 10 + (x - '0'); // I cannot think about it anymore. hint me plz KONGHUMYAI
+            num = num * 10 + (x - '0'); 
         }
         if (x >= 'A')
         {
