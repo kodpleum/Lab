@@ -1,38 +1,34 @@
 #include <stdio.h>
 #include <string.h>
-// int max(int a, int b)
-// {
-//     return (a > b) ? a : b;
-// }
 
 int main()
 {
     char str[10000];
-    int num = 0;
     scanf("%[a-z,A-Z,0-9]", str);
-    int lenght = strlen(str);
-    for (int i = 0; i < lenght; i++)
+    int num = 1, k = 0, length = strlen(str);
+    for (int i = 0; i < length; i++)
     {
         int x = str[i];
         if (x <= '9' && x >= '0')
         {
-            num = num * 10 + (x - '0'); 
+            k = k * 10 + (x - '0');
+            num = k;
         }
         if (x >= 'A')
         {
-            if (num == 0)
+            if (num == 1)
             {
                 printf("%c", x);
             }
-            // for (int j = 0; j < max(n, 1); j++)
-            // {
-            //     printf("%c", x);
-            // }
-            for (int j = 0; j < num; j++)
+            else
             {
-                printf("%c", x);
+                for (int j = 0; j < k; j++)
+                {
+                    printf("%c", x);
+                }
             }
-            num = 0;
+            num = 1;
+            k = 0;
         }
     }
 
