@@ -1,31 +1,20 @@
 #include <stdio.h>
-#include <string.h>
 
 int main()
 {
-    char str[10000];
-    scanf("%[a-z,A-Z,0-9]", str);
-    int num = 1, k = 0, length = strlen(str);
-    for (int i = 0; i < length; i++)
+    for (char i, num = 1, k = 0; (i = getchar()) != '\n';)
     {
-        int x = str[i];
-        if (x <= '9' && x >= '0')
+        char ch = i;
+        if ('0' <= ch && ch <= '9')
         {
-            k = k * 10 + (x - '0');
+            k = k * 10 + (ch - '0');
             num = k;
         }
-        if (x >= 'A')
+        else
         {
-            if (num == 1)
+            for (int j = 0; j < num; j++)
             {
-                printf("%c", x);
-            }
-            else
-            {
-                for (int j = 0; j < k; j++)
-                {
-                    printf("%c", x);
-                }
+                printf("%c", ch);
             }
             num = 1;
             k = 0;
